@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protected Page - Big Heart</title>
+    <script>
+        var password = "Krümelbärchen"; // Set your password here
+        var userInput = prompt("Enter the password:");
+
+        if (userInput !== password) {
+            document.body.innerHTML = "Access denied!";
+        }
+    </script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f9f9f9;
+            margin: 0;
+        }
+        .heart {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            transform: rotate(-45deg);
+            margin: 20px;
+        }
+        .heart:before,
+        .heart:after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        .heart:before {
+            border-radius: 50%;
+            top: -50px;
+            left: 0;
+        }
+        .heart:after {
+            border-radius: 50%;
+            left: 50px;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="heart"></div>
+    <h1>Welcome to the Protected Page</h1>
+    <p>This content is password protected.</p>
+</body>
+</html>
