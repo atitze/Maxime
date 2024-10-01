@@ -20,38 +20,151 @@
             height: 100vh;
             background-color: #f9f9f9;
             margin: 0;
+            flex-direction: column;
         }
+        
         .heart {
             position: relative;
-            width: 100px;
-            height: 100px;
-            background-color: red;
+            width: 250px;
+            height: 250px;
+            background-color: #ff8080;
             transform: rotate(-45deg);
-            margin: 20px;
+            animation: pulse 1s infinite;
         }
+
         .heart:before,
         .heart:after {
             content: '';
             position: absolute;
-            width: 100px;
-            height: 100px;
-            background-color: red;
+            width: 250px;
+            height: 250px;
+            background-color: #ff8080;
         }
+
         .heart:before {
             border-radius: 50%;
-            top: -50px;
+            top: -125px;
             left: 0;
         }
+
         .heart:after {
             border-radius: 50%;
-            left: 50px;
+            left: 125px;
             top: 0;
         }
+
+        /* Heart pulsating animation */
+        @keyframes pulse {
+            0% {
+                transform: scale(1) rotate(-45deg);
+                background-color: #ff99cc;
+            }
+            50% {
+                transform: scale(1.1) rotate(-45deg);
+                background-color: #ff66b2;
+            }
+            100% {
+                transform: scale(1) rotate(-45deg);
+                background-color: #ff99cc;
+            }
+        }
+
+        /* Text inside the heart */
+        .heart-text {
+            position: absolute;
+            transform: rotate(45deg); /* To make the text appear straight */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            color: white;
+            font-size: 1.2rem;
+            text-align: center;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        .heart-text a {
+            color: yellow;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Styling the popup */
+        .popup {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: white;
+            border: 2px solid #ff66b2;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .popup img {
+            max-width: 100px;
+            height: auto;
+        }
+
+        .popup button {
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: #ff66b2;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
     </style>
 </head>
 <body>
-    <div class="heart"></div>
-    <h1>Hello my dearest</h1>
-    <p>I love you soooooooooo much!</p>
+    <div class="heart">
+        <div class="heart-text">
+            my dearest Krümelbärchen, you managed to solve the riddle,<br>
+            congratulations!<br>
+            The second part of your birthday gift will await you at home, <br>
+            <a href="#" id="spoiler-link">here</a> is a little spoiler.
+        </div>
+    </div>
+
+    <div class="popup-overlay" id="popup-overlay"></div>
+
+    <div class="popup" id="popup">
+        <img src="https://image.shutterstock.com/image-photo/photo-old-camera-260nw-752387077.jpg" alt="Camera">
+        <br>
+        <button id="close-popup">Close</button>
+    </div>
+
+    <script>
+        document.getElementById('spoiler-link').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevents the link from navigating
+            document.getElementById('popup').style.display = 'block';
+            document.getElementById('popup-overlay').style.display = 'block';
+        });
+
+        document.getElementById('close-popup').addEventListener('click', function() {
+            document.getElementById('popup').style.display = 'none';
+            document.getElementById('popup-overlay').style.display = 'none';
+        });
+
+        document.getElementById('popup-overlay').addEventListener('click', function() {
+            document.getElementById('popup').style.display = 'none';
+            document.getElementById('popup-overlay').style.display = 'none';
+        });
+    </script>
 </body>
 </html>
