@@ -36,7 +36,7 @@
             transform: rotate(-45deg);
             animation: pulse 1.5s infinite ease-in-out;
             margin: 0 auto;
-            overflow: hidden; /* This prevents the rectangular box issue */
+            border-radius: 50% 50% 0 0;
         }
 
         .heart:before,
@@ -46,18 +46,17 @@
             width: 280px;
             height: 280px;
             background-color: inherit; /* Same color as the heart */
+            border-radius: 50%;
         }
 
         .heart:before {
-            border-radius: 50%;
-            top: -140px; /* Adjusted for the larger heart */
+            top: -140px;
             left: 0;
         }
 
         .heart:after {
-            border-radius: 50%;
             top: 0;
-            left: 140px; /* Adjust to ensure it fits */
+            left: 140px;
         }
 
         /* Heart pulsating animation */
@@ -84,14 +83,14 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: column; /* Ensure text flows in column */
+            flex-direction: column;
             text-align: center;
             color: white;
             font-size: 1.2rem;
             padding: 30px;
             font-family: Arial, sans-serif;
             transform: rotate(45deg); /* Make text straight */
-            z-index: 1; /* Ensure text is above the heart */
+            z-index: 1;
             box-sizing: border-box;
         }
 
