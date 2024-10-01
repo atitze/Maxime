@@ -33,12 +33,15 @@
         /* Heart styles */
         .heart {
             position: relative;
-            width: 400px;  /* Adjusted size */
-            height: 400px; /* Adjusted size */
+            width: 300px; /* Adjusted size */
+            height: 300px; /* Adjusted size */
             background-color: #ff80aa;
             transform: rotate(-45deg);
             animation: pulse 1.5s infinite ease-in-out;
             margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         /* Using pseudo-elements for the heart shape */
@@ -46,20 +49,20 @@
         .heart:after {
             content: '';
             position: absolute;
-            width: 200px;  /* Adjusted size */
-            height: 200px; /* Adjusted size */
+            width: 300px;  /* Same width as heart */
+            height: 300px; /* Same height as heart */
             background-color: inherit; /* Same color as the heart */
             border-radius: 50%; /* Circular shape for the top */
         }
 
         .heart:before {
-            top: -100px; /* Adjusted for positioning */
+            top: -150px; /* Positioning for the left lobe */
             left: 0;
         }
 
         .heart:after {
-            top: 0;
-            left: 100px; /* Adjusted for positioning */
+            left: 150px; /* Positioning for the right lobe */
+            top: 0; /* Same height */
         }
 
         /* Heart pulsating animation */
