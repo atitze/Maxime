@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Protected Page - Big Heart</title>
     <script>
-        var password = "Krümelbärchen"; // Set your password here
+        var password = "Knuddelbärchen"; // Set your password here
         var userInput = prompt("Enter the password:");
 
         if (userInput !== password) {
@@ -27,16 +27,14 @@
             position: relative;
         }
 
-        /* The Heart Shape */
         .heart {
             position: relative;
             width: 250px;
             height: 250px;
             background-color: #ff80aa;
             transform: rotate(-45deg);
-            margin: 0 auto;
-            box-shadow: 0 0 0 5px black; /* Black border around the heart */
             animation: pulse 1.5s infinite ease-in-out;
+            margin: 0 auto;
         }
 
         .heart:before,
@@ -46,17 +44,18 @@
             width: 175px;
             height: 175px;
             background-color: inherit; /* Same color as the heart */
-            border-radius: 50%;
         }
 
         .heart:before {
-            top: -87.5px;
+            border-radius: 50%;
+            top: -87.5px; /* Move it up so it doesn’t overlap */
             left: 0;
         }
 
         .heart:after {
+            border-radius: 50%;
             top: 0;
-            left: 87.5px;
+            left: 87.5px; /* Adjust to ensure it fits */
         }
 
         /* Heart pulsating animation */
@@ -78,16 +77,18 @@
         /* Text inside the heart */
         .heart-text {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(45deg); /* Center and straighten text */
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             text-align: center;
             color: white;
-            font-size: 1rem;
-            padding: 20px; /* Adjust padding for better fit */
+            font-size: 1.1rem;
+            padding: 20px;
             font-family: Arial, sans-serif;
-            box-sizing: border-box;
-            z-index: 1;
+            transform: rotate(45deg); /* Make text straight */
+            z-index: 1; /* Ensure text is above the heart */
         }
 
         .heart-text a {
@@ -142,8 +143,8 @@
     <div class="heart-container">
         <div class="heart">
             <div class="heart-text">
-                My dearest Krümelbärchen, you managed to solve the riddle,<br>
-                congratulations!<br>
+                My dearest Krümelbärchen, you managed to solve the riddle,
+                CONGRATULATION!<br>
                 The second part of your birthday gift will await you at home, <br>
                 <a href="#" id="spoiler-link">here</a> is a little spoiler.
             </div>
