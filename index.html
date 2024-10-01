@@ -27,10 +27,11 @@
             position: relative;
         }
 
+        /* Increase heart size */
         .heart {
             position: relative;
-            width: 250px;
-            height: 250px;
+            width: 400px;
+            height: 400px;
             background-color: #ff80aa;
             transform: rotate(-45deg);
             animation: pulse 1.5s infinite ease-in-out;
@@ -41,21 +42,21 @@
         .heart:after {
             content: '';
             position: absolute;
-            width: 175px;
-            height: 175px;
+            width: 280px;
+            height: 280px;
             background-color: inherit; /* Same color as the heart */
         }
 
         .heart:before {
             border-radius: 50%;
-            top: -87.5px; /* Move it up so it doesn’t overlap */
+            top: -140px; /* Adjusted for the larger heart */
             left: 0;
         }
 
         .heart:after {
             border-radius: 50%;
             top: 0;
-            left: 87.5px; /* Adjust to ensure it fits */
+            left: 140px; /* Adjust to ensure it fits */
         }
 
         /* Heart pulsating animation */
@@ -84,8 +85,8 @@
             align-items: center;
             text-align: center;
             color: white;
-            font-size: 1.1rem;
-            padding: 20px;
+            font-size: 1.2rem; /* Adjusted for better readability */
+            padding: 30px; /* Increased padding for more space */
             font-family: Arial, sans-serif;
             transform: rotate(45deg); /* Make text straight */
             z-index: 1; /* Ensure text is above the heart */
@@ -112,7 +113,7 @@
         }
 
         .popup img {
-            max-width: 100px;
+            max-width: 150px; /* Increased image size */
             height: auto;
         }
 
@@ -143,8 +144,8 @@
     <div class="heart-container">
         <div class="heart">
             <div class="heart-text">
-                My dearest Krümelbärchen, you managed to solve the riddle,
-                CONGRATULATION!<br>
+                My dearest Krümelbärchen, you managed to solve the riddle,<br>
+                CONGRATULATIONS!<br>
                 The second part of your birthday gift will await you at home, <br>
                 <a href="#" id="spoiler-link">here</a> is a little spoiler.
             </div>
