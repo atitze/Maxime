@@ -27,7 +27,7 @@
             position: relative;
         }
 
-        /* Increase heart size */
+        /* Increased heart size */
         .heart {
             position: relative;
             width: 400px;
@@ -36,6 +36,7 @@
             transform: rotate(-45deg);
             animation: pulse 1.5s infinite ease-in-out;
             margin: 0 auto;
+            overflow: hidden; /* This prevents the rectangular box issue */
         }
 
         .heart:before,
@@ -83,17 +84,19 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column; /* Ensure text flows in column */
             text-align: center;
             color: white;
-            font-size: 1.2rem; /* Adjusted for better readability */
-            padding: 30px; /* Increased padding for more space */
+            font-size: 1.2rem;
+            padding: 30px;
             font-family: Arial, sans-serif;
             transform: rotate(45deg); /* Make text straight */
             z-index: 1; /* Ensure text is above the heart */
+            box-sizing: border-box;
         }
 
         .heart-text a {
-            color: yellow;
+            color: red;
             text-decoration: none;
             font-weight: bold;
         }
@@ -146,7 +149,7 @@
             <div class="heart-text">
                 My dearest Krümelbärchen, you managed to solve the riddle,<br>
                 CONGRATULATIONS!<br>
-                The second part of your birthday gift will await you at home, <br>
+                The second part of your birthday gift will await you at home,<br>
                 <a href="#" id="spoiler-link">here</a> is a little spoiler.
             </div>
         </div>
