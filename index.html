@@ -37,7 +37,7 @@
             height: 300px; /* Adjusted size */
             background-color: #ff80aa;
             transform: rotate(-45deg);
-            animation: pulse 1.5s infinite ease-in-out;
+            animation: pulse 2s infinite ease-in-out; /* Duration changed for better transition */
             margin: 0 auto;
             display: flex;
             justify-content: center;
@@ -65,19 +65,43 @@
             top: 0; /* Same height */
         }
 
-        /* Heart pulsating animation */
+        /* Heart pulsating animation with multiple color stops */
         @keyframes pulse {
             0% {
                 transform: scale(1) rotate(-45deg);
-                background-color: #ff99cc;
+                background-color: #ff80aa; /* Light Pink */
+            }
+            10% {
+                background-color: #ff99cc; /* Pink */
+            }
+            20% {
+                background-color: #ff66b2; /* Medium Pink */
+            }
+            30% {
+                background-color: #ff4d99; /* Deep Pink */
+            }
+            40% {
+                background-color: #ff3385; /* Dark Pink */
             }
             50% {
                 transform: scale(1.1) rotate(-45deg);
-                background-color: #ff66b2;
+                background-color: #ff1a6d; /* Hot Pink */
+            }
+            60% {
+                background-color: #ff0066; /* Vivid Pink */
+            }
+            70% {
+                background-color: #cc0052; /* Bright Pink */
+            }
+            80% {
+                background-color: #99003d; /* Rich Pink */
+            }
+            90% {
+                background-color: #660028; /* Darker Pink */
             }
             100% {
                 transform: scale(1) rotate(-45deg);
-                background-color: #ff99cc;
+                background-color: #ff80aa; /* Return to Light Pink */
             }
         }
 
@@ -91,7 +115,7 @@
             align-items: center;
             flex-direction: column; /* Stack text vertically */
             text-align: center;
-            color: white;
+            color: pink;
             font-size: 1.2rem;
             padding: 30px;
             font-family: Arial, sans-serif;
