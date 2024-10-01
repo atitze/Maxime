@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Protected Page - Big Heart</title>
     <script>
-        var password = "Knuddelbärchen"; // Set your password here
+        var password = "Krümelbärchen"; // Set your password here
         var userInput = prompt("Enter the password:");
 
         if (userInput !== password) {
@@ -29,8 +29,8 @@
 
         .heart {
             position: relative;
-            width: 300px;
-            height: 300px;
+            width: 250px;
+            height: 250px;
             background-color: #ff80aa;
             transform: rotate(-45deg);
             animation: pulse 1.5s infinite ease-in-out;
@@ -41,24 +41,24 @@
         .heart:after {
             content: '';
             position: absolute;
-            width: 300px;
-            height: 300px;
-            background-color: inherit; /* Use the same color as the heart */
+            width: 175px;
+            height: 175px;
+            background-color: inherit; /* Same color as the heart */
         }
 
         .heart:before {
             border-radius: 50%;
-            top: -150px;
+            top: -87.5px; /* Move it up so it doesn’t overlap */
             left: 0;
         }
 
         .heart:after {
             border-radius: 50%;
-            left: 150px;
             top: 0;
+            left: 87.5px; /* Adjust to ensure it fits */
         }
 
-        /* Smooth Pulsating Animation */
+        /* Heart pulsating animation */
         @keyframes pulse {
             0% {
                 transform: scale(1) rotate(-45deg);
@@ -77,18 +77,18 @@
         /* Text inside the heart */
         .heart-text {
             position: absolute;
-            width: 100%; /* Ensure text container fits the heart */
+            width: 100%;
             height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
             color: white;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             padding: 20px;
             font-family: Arial, sans-serif;
-            z-index: 1; /* Ensure text is above the heart shape */
-            transform: rotate(45deg); /* Straighten the text */
+            transform: rotate(45deg); /* Make text straight */
+            z-index: 1; /* Ensure text is above the heart */
         }
 
         .heart-text a {
