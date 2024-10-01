@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Protected Page - Big Heart</title>
     <script>
-        var password = "Knuddelbärchen"; // Set your password here
+        var password = "Krümelbärchen"; // Set your password here
         var userInput = prompt("Enter the password:");
 
         if (userInput !== password) {
@@ -23,6 +23,10 @@
             flex-direction: column;
         }
         
+        .heart-container {
+            position: relative;
+        }
+
         .heart {
             position: relative;
             width: 250px;
@@ -30,6 +34,7 @@
             background-color: #ff8080;
             transform: rotate(-45deg);
             animation: pulse 1s infinite;
+            margin: 0 auto;
         }
 
         .heart:before,
@@ -38,7 +43,7 @@
             position: absolute;
             width: 250px;
             height: 250px;
-            background-color: #ff8080;
+            background-color: inherit; /* Match background to the heart's color */
         }
 
         .heart:before {
@@ -72,15 +77,18 @@
         /* Text inside the heart */
         .heart-text {
             position: absolute;
-            transform: rotate(45deg); /* To make the text appear straight */
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(45deg);
+            width: 100%; /* Make sure the text stays inside the heart */
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
             color: white;
             font-size: 1.2rem;
-            text-align: center;
             padding: 20px;
             font-family: Arial, sans-serif;
+            transform: rotate(45deg); /* To make the text appear straight */
+            z-index: 1; /* Ensure text appears above everything */
         }
 
         .heart-text a {
@@ -132,12 +140,14 @@
     </style>
 </head>
 <body>
-    <div class="heart">
-        <div class="heart-text">
-            my dearest Krümelbärchen, you managed to solve the riddle,<br>
-            congratulations!<br>
-            The second part of your birthday gift will await you at home, <br>
-            <a href="#" id="spoiler-link">here</a> is a little spoiler.
+    <div class="heart-container">
+        <div class="heart">
+            <div class="heart-text">
+                my dearest Krümelbärchen, you managed to solve the riddle,<br>
+                congratulations!<br>
+                The second part of your birthday gift will await you at home, <br>
+                <a href="#" id="spoiler-link">here</a> is a little spoiler.
+            </div>
         </div>
     </div>
 
