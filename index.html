@@ -25,38 +25,41 @@
 
         .heart-container {
             position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        /* Increased heart size */
+        /* Heart styles */
         .heart {
             position: relative;
-            width: 400px;
-            height: 400px;
+            width: 400px;  /* Adjusted size */
+            height: 400px; /* Adjusted size */
             background-color: #ff80aa;
             transform: rotate(-45deg);
             animation: pulse 1.5s infinite ease-in-out;
             margin: 0 auto;
-            border-radius: 50% 50% 0 0;
         }
 
+        /* Using pseudo-elements for the heart shape */
         .heart:before,
         .heart:after {
             content: '';
             position: absolute;
-            width: 280px;
-            height: 280px;
+            width: 200px;  /* Adjusted size */
+            height: 200px; /* Adjusted size */
             background-color: inherit; /* Same color as the heart */
-            border-radius: 50%;
+            border-radius: 50%; /* Circular shape for the top */
         }
 
         .heart:before {
-            top: -140px;
+            top: -100px; /* Adjusted for positioning */
             left: 0;
         }
 
         .heart:after {
             top: 0;
-            left: 140px;
+            left: 100px; /* Adjusted for positioning */
         }
 
         /* Heart pulsating animation */
@@ -83,7 +86,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
+            flex-direction: column; /* Stack text vertically */
             text-align: center;
             color: white;
             font-size: 1.2rem;
