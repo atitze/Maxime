@@ -27,15 +27,16 @@
             position: relative;
         }
 
+        /* The Heart Shape */
         .heart {
             position: relative;
             width: 250px;
             height: 250px;
             background-color: #ff80aa;
             transform: rotate(-45deg);
-            animation: pulse 1.5s infinite ease-in-out;
             margin: 0 auto;
-            border: 5px solid black; /* Black border around the heart */
+            box-shadow: 0 0 0 5px black; /* Black border around the heart */
+            animation: pulse 1.5s infinite ease-in-out;
         }
 
         .heart:before,
@@ -45,18 +46,17 @@
             width: 175px;
             height: 175px;
             background-color: inherit; /* Same color as the heart */
+            border-radius: 50%;
         }
 
         .heart:before {
-            border-radius: 50%;
-            top: -87.5px; /* Move it up so it doesn’t overlap */
+            top: -87.5px;
             left: 0;
         }
 
         .heart:after {
-            border-radius: 50%;
             top: 0;
-            left: 87.5px; /* Adjust to ensure it fits */
+            left: 87.5px;
         }
 
         /* Heart pulsating animation */
@@ -78,19 +78,16 @@
         /* Text inside the heart */
         .heart-text {
             position: absolute;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg); /* Center and straighten text */
             text-align: center;
             color: white;
-            font-size: 1rem; /* Reduce text size slightly */
-            padding: 30px; /* Adjust padding for better fit */
+            font-size: 1rem;
+            padding: 20px; /* Adjust padding for better fit */
             font-family: Arial, sans-serif;
-            transform: rotate(45deg); /* Make text straight */
-            z-index: 1; /* Ensure text is above the heart */
-            box-sizing: border-box; /* Ensure padding fits inside the heart */
+            box-sizing: border-box;
+            z-index: 1;
         }
 
         .heart-text a {
@@ -145,7 +142,7 @@
     <div class="heart-container">
         <div class="heart">
             <div class="heart-text">
-                my dearest Krümelbärchen, you managed to solve the riddle,<br>
+                My dearest Krümelbärchen, you managed to solve the riddle,<br>
                 congratulations!<br>
                 The second part of your birthday gift will await you at home, <br>
                 <a href="#" id="spoiler-link">here</a> is a little spoiler.
@@ -156,7 +153,7 @@
     <div class="popup-overlay" id="popup-overlay"></div>
 
     <div class="popup" id="popup">
-        <img src="https://image.shutterstock.com/image-photo/photo-old-camera-260nw-752387077.jpg" alt="Camera">
+        <img src="https://onecameraonelens.com/wp-content/uploads/2023/04/projectheader.jpg?w=1024" alt="Camera">
         <br>
         <button id="close-popup">Close</button>
     </div>
